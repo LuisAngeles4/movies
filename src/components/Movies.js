@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Movie'
 
 class Movies extends Component{
     constructor(props){
