@@ -1,7 +1,7 @@
 .main-container{
   width: 100vw;
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   align-content: center;
 }
 
@@ -27,6 +27,10 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center; 
+  background-color: #EFB1FE;
+  color: black;
+  font-size: .5cm;
+
 }
 
 .component-img{
@@ -44,4 +48,26 @@
 .link{
   color: #fff !important;
   text-decoration: none;
+}
+
+.img{
+  width: 20%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  margin: auto;  
+
+}
+
+.text{
+  font-size: 2cm;
+  text-align: center;
+}
+
+.infopelis{
+  text-align: center;
+}
+
+.divmovies{
+  background-color: #F6D2FF;
 }

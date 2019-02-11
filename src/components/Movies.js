@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Movie'
+import Movie from './Movie'
 
 class Movies extends Component{
     constructor(props){
@@ -61,16 +61,25 @@ class Movies extends Component{
     }
     render(){
         return(
-            <div>
-                <h1>Películas</h1>
-                {this.state.movies.map((movies, index)=>(
-                    <div>
-                        <img src={movies.imagen}
-                        alt={movies.nombre} width="100" height="100"/>
-                        <h3>{movies.nombre}</h3>
+            <div className="divmovies">
+                <h1 className="text">Películas</h1>
+                {this.state.movies.map((movie, index)=>(
+                    <div className="infopelis">
+                        <img className="img"src={movie.imagen}
+                        
+                        alt={movie.nombre} width="200" height="200"/>
+                        <h3>{movie.nombre}</h3>
+                        <h4>Genero: {movie.genero}</h4>
+                        <h4>Duración: {movie.duración}</h4>
+                        <h4>Año: {movie.año}</h4>
+                        <h4>Dirección: {movie.direccion}</h4>
+                        
+
                        
-                        <p>----------------------------------</p>
-                        <Movies p={movies}></Movies>
+                       <hr></hr>
+
+                       <br></br>
+                        <Movie p={movie}></Movie>
                     </div>
                 ))}
             </div>

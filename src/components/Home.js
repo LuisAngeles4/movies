@@ -6,7 +6,7 @@ import React from 'react'
              <img className="component-img"
              src="https://www.baque.com/wp-content/uploads/2018/02/el-cafe-en-el-cine.jpg"
              alt="No se pudo cargar la imagen"
-             ></img>
+             />
          </div>
      )
  }
