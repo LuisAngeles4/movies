@@ -56,9 +56,67 @@ class Movies extends Component{
                 },
 
 
-            ]
+            ],
+
+
+            newProduct: {
+                nombre:null,
+                genero:null,
+                duración:null,
+                año:null,
+                direccion:null,
+                imagen:null
+
+
+            }
         }
     }
+
+    changeName = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.nombre = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    changeImagen = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.imagen = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    changeGenero = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.genero = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    changeDuracion = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.duración = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    changeAño = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.año = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    changeDireccion = (e) =>{
+        let new_product = this.state.newProduct
+        new_product.direccion = e.target.value
+        this.setState({newProduct: new_product})
+    }
+
+    addProduct = (e)=>{
+        e.preventDefault();
+        let {movies}=this.state
+        movies.push(this.state.newProduct)
+        this.setState({movies})
+    }
+
+
+
     render(){
         return(
             <div className="divmovies">
@@ -69,19 +127,92 @@ class Movies extends Component{
                         
                         alt={movie.nombre} width="200" height="200"/>
                         <h3>{movie.nombre}</h3>
-                        <h4>Genero: {movie.genero}</h4>
-                        <h4>Duración: {movie.duración}</h4>
-                        <h4>Año: {movie.año}</h4>
-                        <h4>Dirección: {movie.direccion}</h4>
+                        
+
+                       <p>-----------------------------------------------</p>
                         
 
                        
-                       <hr></hr>
-
+              
                        <br></br>
                         <Movie p={movie}></Movie>
                     </div>
                 ))}
+            <div className="form-container">
+            <h2>Agrega un nuevo producto</h2>
+            <label for="nombre">Nombre: </label>
+            <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre"
+            onChange={(e)=>this.changeName(e)}
+            
+            
+            />
+            <label for="genero">Genero: </label>
+            <input
+            type="text"
+            name="genero"
+            id="genero"
+            placeholder="Genero"
+            onChange={(e)=>this.changeGenero(e)}
+            
+            
+            />
+            <label for="duracion">Duración: </label>
+            <input
+            type="text"
+            name="duracion"
+            id="duracion"
+            placeholder="Duración"
+            onChange={(e)=>this.changeDuracion(e)}
+            
+            
+            />
+            <label for="año">Año: </label>
+            <input
+            type="text"
+            name="año"
+            id="año"
+            placeholder="año"
+            onChange={(e)=>this.changeAño(e)}
+            
+            
+            />
+
+            <label for="año">Dirección: </label>
+            <input
+            type="text"
+            name="direccion"
+            id="direccion"
+            placeholder="Dirección"
+            onChange={(e)=>this.changeDireccion(e)}
+            
+            
+            />
+             <label for="imagen">Imagen: </label>
+            <input
+            type="text"
+            name="imagen"
+            id="imagen"
+            placeholder="Imagen"
+            onChange={(e)=>this.changeImagen(e)}
+            
+            
+            />
+
+            <button onClick={(e)=>this.addProduct(e)}>Agregame</button>
+
+
+        
+            
+            
+            
+            
+            </div>
+            
+            
             </div>
         )
     }
